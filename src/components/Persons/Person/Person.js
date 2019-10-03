@@ -7,11 +7,12 @@ class Person extends Component {
     console.log("[Person.js] rendering...");
     return (
       <Auxiliary>
-        <p onClick={this.props.clicked}>
+        <p key="i1" onClick={this.props.clicked}>
           I'm {this.props.name} and {this.props.age} years old!
         </p>
-        <p>{this.props.children}</p>
+        <p key="i2">{this.props.children}</p>
         <input
+          key="i3"
           type="text"
           value={this.props.name}
           onChange={this.props.changed}
