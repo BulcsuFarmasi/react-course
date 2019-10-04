@@ -6,7 +6,7 @@ import classes from "./Person.css";
 
 class Person extends Component {
   componentDidMount() {
-    document.querySelector("input").focus();
+    this.inputElement.focus();
   }
 
   render() {
@@ -20,6 +20,9 @@ class Person extends Component {
         <input
           key="i3"
           type="text"
+          ref={inputEl => {
+            this.inputElement = inputEl;
+          }}
           value={this.props.name}
           onChange={this.props.changed}
         />
